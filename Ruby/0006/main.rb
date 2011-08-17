@@ -15,7 +15,7 @@ require_relative '../lib/problem.rb'
 # few months ago.  I could look up the latter.  Instead, I brute forced it.
 def diff(n)
   sum_of_squares = (1..n).inject(0) {|s,a| s + a**2}
-  sum = (1..n).inject(:+)
+  sum = n*(n+1)/2
   return sum**2 - sum_of_squares
 end
 

@@ -19,5 +19,6 @@ start() ->
 diff(N) ->
 	L = lists:seq(1,N),
 	SumOfSquares = lists:sum( lists:map(fun(X) -> X*X end, L) ),
-	Sum = lists:sum(L),
+	N = length(L),
+	Sum = round(N*(N+1)/2), % This is always an integer, so the round is just to force it to be an int and not a float.
 	Sum*Sum - SumOfSquares.

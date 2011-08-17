@@ -23,6 +23,8 @@ run(SubmittedAnswer, Fun) ->
 	io:format("ANSWER: ~w~n", [ComputedAnswer]),
 	ComputedAnswer.
 
+% Note that we use =:= which won't compare integers with floats.  It is up to you
+% to be consistent about returning integers or floats, depending on the problem!
 output_check(ComputedAnswer, RightAnswer) ->
 	io:format("-- Answer Correct: ~w, Expected: ~w, Got: ~w~n", [(RightAnswer =:= ComputedAnswer), RightAnswer, ComputedAnswer]).
 	
