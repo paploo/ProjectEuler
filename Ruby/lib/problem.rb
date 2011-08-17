@@ -22,10 +22,10 @@ class Problem
     stop_at = Time.now
     @duration = stop_at - start_at
     if( submitted_answer )
-      output_check(self.computed_answer, self.computed_answer)
+      output_check(self.computed_answer, self.submitted_answer)
     end
     puts "-- Computed in #{self.duration * 1000.0} ms"
-    puts "ANSWER: #{submitted_answer.inspect}"
+    puts "ANSWER: #{computed_answer.inspect}"
     return @computed_answer
   end
   
