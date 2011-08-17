@@ -10,6 +10,9 @@
 
 require_relative '../lib/problem.rb'
 
+# I went for the straight-forward solution because the number of terms is small.
+# I know the sum of n off the top of my head, and derived the sum of n^2 a 
+# few months ago.  I could look up the latter.  Instead, I brute forced it.
 def diff(n)
   sum_of_squares = (1..n).inject(0) {|s,a| s + a**2}
   sum = (1..n).inject(:+)

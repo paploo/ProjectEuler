@@ -4,6 +4,7 @@
 
 require_relative '../lib/problem.rb'
 
+# This isn't the cleanest solution, but it is certainly the most straight forward.
 def sum(max)
   a = 1
   b = 2

@@ -3,6 +3,7 @@
 
 require_relative '../lib/problem.rb'
 
+# The number is small, so we brute force with the obvious solution.
 def sum(n)
   (1...n).select {|a| a%3==0 || a%5==0}.inject(:+)
 end
