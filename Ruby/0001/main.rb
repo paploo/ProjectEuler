@@ -3,17 +3,18 @@
 
 # This is the meat of the solution.
 # This is the most straight-forward solution, but not the most efficient.
+
+require_relative '../lib/problem.rb'
+
 def sum(n)
   (1...n).select {|a| a%3==0 || a%5==0}.inject(:+)
 end
 
-# This is all just output.
-s = sum(10)
-if( s == 23 )
-  answer = sum(1000)
-  puts answer
-  submitted_answer = 233168
-  puts "Equals Submitted Answer!" if answer == submitted_answer
-else
-  puts "Expected 23 but got #{s.inspect}"
+Problem.new do |p|
+  
+  p.check(23) { sum(10) }
+  
+  p.submitted_answer = 233168
+  p.run { sum(100) }
+  
 end

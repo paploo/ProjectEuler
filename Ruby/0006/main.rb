@@ -8,19 +8,19 @@
 # 
 # Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
+require_relative '../lib/problem.rb'
+
 def diff(n)
   sum_of_squares = (1..n).inject(0) {|s,a| s + a**2}
   sum = (1..n).inject(:+)
   return sum**2 - sum_of_squares
 end
 
-# Test value:
-test_value = diff(10)
-test_ans = 2640
-puts [:test_value, test_value, :test_ans, test_ans, :==, test_value==test_ans].inspect
-
-# Result
-value = diff(100)
-puts value.inspect
-
-puts 25164150 # Submitted Answer
+Problem.new do |p|
+  
+  p.check(2640) { diff(10) }
+  
+  p.submitted_answer = 25164150
+  p.run { diff(100) }
+  
+end
