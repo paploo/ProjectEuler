@@ -13,6 +13,6 @@ Problem.new do |p|
   p.check(23) { sum(10) }
   
   p.submitted_answer = 233168
-  p.run { sum(100) }
+  p.run { sum(1000) }
   
 end

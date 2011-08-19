@@ -4,7 +4,7 @@
 check(Answer, Fun) ->
 	ComputedAnswer = Fun(),
 	output_check(ComputedAnswer, Answer),
-	ComputedAnswer.
+	ComputedAnswer =:= Answer.
 
 run(Fun) ->
 	Start = now(),

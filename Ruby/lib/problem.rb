@@ -18,7 +18,7 @@ class Problem
   def check(answer, &block)
     computed_answer = block.call
     output_check(computed_answer, answer)
-    return computed_answer
+    return computed_answer == answer
   end
   
   # Run the real answer.  If we have completed the problem and know the answer,
