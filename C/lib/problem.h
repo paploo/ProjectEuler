@@ -15,14 +15,11 @@ typedef UInteger ProblemUInteger;
 /* Define function pointers for problem procedures */
 typedef ProblemInteger(ProblemIntegerProcedure)(void);
 typedef ProblemInteger(ProblemUIntegerProcedure)(void);
-typedef double(ProblemDoubleProcedure)(void);
 
 /* Define the check methods */
 bool ProblemIntegerCheck(ProblemInteger answer, ProblemIntegerProcedure *fp);
 bool ProblemUIntegerCheck(ProblemUInteger answer, ProblemUIntegerProcedure *fp);
-bool ProblemDoubleCheck(ProblemInteger answer, ProblemDoubleProcedure *fp);
 
 /* Define the run methods */
 ProblemInteger ProblemIntegerRun(ProblemInteger submittedAnswer, bool hasSubmittedAnswer, ProblemIntegerProcedure *fp);
 ProblemUInteger ProblemUIntegerRun(ProblemUInteger submittedAnswer, bool hasSubmittedAnswer, ProblemUIntegerProcedure *fp);
-double ProblemDoubleRun(double submittedAnswer, bool hasSubmittedAnswer, ProblemDoubleProcedure *fp);
