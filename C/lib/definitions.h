@@ -20,3 +20,15 @@ typedef Integer64 Integer;
 typedef UInteger64 UInteger;
 
 typedef UInteger8 Byte;
+
+typedef struct UInteger64ArrayStruct {
+	UInteger64 length;
+	UInteger64 *array;
+} UInteger64Array;
+
+typedef struct UInteger32ArrayStruct {
+	UInteger64 length;
+	UInteger32 *array;
+} UInteger32Array;
+
+typedef UInteger64Array UIntegerArray;
