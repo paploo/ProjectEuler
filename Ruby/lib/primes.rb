@@ -1,16 +1,20 @@
+require_relative 'primes/helpers'
 require_relative 'primes/eratosthenes'
 
 module Primes
-  # Prime[2^#] & /@ Table[k, {k, 0, 32}]
-  NTH_PRIMES_EXP_2 = [2, 3, 7, 19, 53, 131, 311, 719, 1619, 3671, 8161, 17863, 38873, 84017, 180503, 386093, 821641, 1742537, 3681131, 7754077, 16290047, 34136029, 71378569, 148948139, 310248241, 645155197, 1339484197, 2777105129, 5750079047, 11891268401, 24563311309, 50685770167, 104484802057]
-  
-  # PrimePi[2^#] & /@ Table[k, {k, 0, 32}]
-  PRIME_PIS_EXP_2 = [0, 1, 2, 4, 6, 11, 18, 31, 54, 97, 172, 309, 564, 1028, 1900, 3512, 6542, 12251, 23000, 43390, 82025, 155611, 295947, 564163, 1077871, 2063689, 3957809, 7603553, 14630843, 28192750, 54400028, 105097565, 203280221]
+  # These are used for the fast_prime_tests, which can be proof positive, proof
+  # negative, or undetermined.
+  IS_PRIME = 1
+  IS_COMPOSITE = -1
+  IS_UNDETERMINED = 0
   
   # Returns true if the prime is true.
   def self.prime?(n)
     # To deal with 1 is a special case, and we grab anything negative while we're at it.
     return false if n<2
+    
+    # First check if it is composite using the fast prime tests.
+    return false if fast_prime_test(n)==-1
     
     # Then we see if the first prime factor is not itse self.
     return first_prime_factor(n) == n
@@ -30,7 +34,8 @@ module Primes
   # Uses fast prime test algorithms.  Returns 1 if it is verifiably prime,
   # -1 if it is verifiably composite, and 0 if it is inconclusive.
   def self.fast_prime_test(n)
-    return 0
+    return IS_UNDETERMINED
+    #return Helpers.fermat_test_prime?(n, Math.sqrt(n).floor, 10.0)
   end
   
   # Returns a list of all the prime factors of the given number.
@@ -60,23 +65,7 @@ module Primes
   def self.primes(n)
     return Eratosthenes.generate_primes( Helpers.nth_prime_upper_bound(n) )[0,n]
   end
-  
-  module Helpers
-    
-    # This returns a number guaranteed to be more than the nth prime.
-    def self.nth_prime_upper_bound(n)
-      exponent = Math.log(n, 2).ceil
-      return NTH_PRIMES_EXP_2[exponent]
-    end
-    
-    
-    # This returns a number guaranteed to be higher than the actual number of
-    # primes at or lower than the given number
-    def self.prime_pi_upper_bound(n)
-      exponent = Math.log(n, 2).ceil
-      return PRIME_PIS_EXP_2[exponent]
-    end
-    
-  end
-  
+      
 end
+
+(1..100).map {|n| [n, Primes.prime?(n)]}
