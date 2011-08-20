@@ -2,6 +2,9 @@
 #include <inttypes.h>
 #include <stdbool.h>
 
+#ifndef __EULER_LIB_DEFINITIONS_H__
+#define __EULER_LIB_DEFINITIONS_H__
+
 typedef int8_t Integer8;
 typedef uint8_t UInteger8;
 
@@ -21,14 +24,7 @@ typedef UInteger64 UInteger;
 
 typedef UInteger8 Byte;
 
-typedef struct UInteger64ArrayStruct {
-	UInteger64 length;
-	UInteger64 *array;
-} UInteger64Array;
+#define PRI_INTEGER   PRId64
+#define PRI_UINTEGER  PRIu64
 
-typedef struct UInteger32ArrayStruct {
-	UInteger64 length;
-	UInteger32 *array;
-} UInteger32Array;
-
-typedef UInteger64Array UIntegerArray;
+#endif

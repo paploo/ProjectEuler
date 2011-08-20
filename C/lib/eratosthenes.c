@@ -1,10 +1,9 @@
 #include <stdlib.h>
 
 #include "definitions.h"
+#include "array.h"
 
-// Generates all the primes less than or equal to n, sets the return array
-// in the passed struct pointer and returns the count.
-UInteger32 eratosthenesGetPrimes(UInteger32 n, UInteger32Array *a) {
+UInteger32 eratosthenesGetPrimes(UInteger n, Array *a) {
 	// Allocate the list.
 	// Calloc sets them all to false, so we treat each slot as a question of if it is composite rather than if it is prime.
 	UInteger32 *list = calloc(n+1, sizeof(UInteger32));
@@ -44,27 +43,9 @@ UInteger32 eratosthenesGetPrimes(UInteger32 n, UInteger32Array *a) {
 	free(list);
 	
 	// Return a pointer to an array struct.
-	if(a) {
-		a->length = count;
-		a->array = primes;
+	if(a){
+		arrayInit(a, count, primes);
 	}
 	
 	return count;
-}
-
-
-// TODO: Make an array helper that can iterate through and print an array, make an array, free an array (and its content array), and set it to a new array (which frees the old one and sets the new length).
-
-#include <stdio.h>
-
-int main(void){
-	UInteger n = 20;
-	UInteger32Array *primes = malloc( sizeof(UInteger32Array) );
-	eratosthenesGeneratePrimes(n, primes);
-	for(UInteger i=0; i<primes->length; i++)
-		printf("%d\n", primes->array[i]);
-	
-	free(primes->array);
-	free(primes);
-	return 0;
 }

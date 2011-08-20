@@ -38,7 +38,7 @@ all: $(EXEC)
 # Sets the dylib search path at runtime, in case you compiled in a .dylib file
 # instead of a .a file.
 run: $(EXEC)
-	DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$(LIBRARY_PATH):$(ADDITIONAL_LIBRARY_PATH)" ./$(EXEC)
+	DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$(LIBRARY_PATH):$(ADDITIONAL_LIBRARY_PATH)" time ./$(EXEC)
 
 # Compile the app against the static library.
 exec_static: $(OBJECTS)

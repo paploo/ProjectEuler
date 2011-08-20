@@ -58,5 +58,5 @@ ProblemUInteger ProblemUIntegerRun(ProblemUInteger submittedAnswer, bool hasSubm
 
 /* Private function for outputting the check results. */
 void ProblemOutputUIntegerCheck(ProblemUInteger computedAnswer, ProblemUInteger rightAnswer) {
-	printf("-- Answer Correct: %s, Expected: %" PRIPUI ", Got: %" PRIPUI "\n", computedAnswer==rightAnswer ? "YES" : "NO", computedAnswer, rightAnswer);
+	printf("-- Answer Correct: %s, Expected: %" PRIPUI ", Got: %" PRIPUI "\n", computedAnswer==rightAnswer ? "YES" : "NO", rightAnswer, computedAnswer);
 }
