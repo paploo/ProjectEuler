@@ -6,7 +6,7 @@ module Primes
     #
     # This allows for switching between multiple implementations.
     def self.generate_primes(n=1024)
-      def generate_primes_basic(n)
+      generate_primes_basic(n)
     end
     
     # This is the most straight-forward implementation, but is incredibly RAM

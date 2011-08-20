@@ -10,15 +10,14 @@ require_relative '../lib/primes.rb'
 # them, or at least use the prime counting function to guess at the number of
 # primes we need to calculate.
 def nth_prime(n)
-  m = 2**17
-  return Primes::Eratosthenes.primes(m)[n-1]
+  return Primes.primes(n)[-1]
 end
 
 Problem.new do |p|
   
   p.check(13) { nth_prime(6) }
   
-  p.submitted_answer = nil
+  p.submitted_answer = 104743
   p.run { nth_prime(10001) }
   
 end
