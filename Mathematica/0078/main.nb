@@ -1,0 +1,67 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      1490,         58]
+NotebookOptionsPosition[      1169,         42]
+NotebookOutlinePosition[      1510,         57]
+CellTagsIndexPosition[      1467,         54]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"While", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Mod", "[", 
+      RowBox[{
+       RowBox[{"PartitionsP", "[", "n", "]"}], ",", 
+       RowBox[{"10", "^", "6"}]}], "]"}], "\[NotEqual]", "0"}], ",", " ", 
+    RowBox[{"n", "++"}]}], "]"}], ";"}], "\[IndentingNewLine]", "n"}], "Input",\
+
+ CellChangeTimes->{{3.522882153444723*^9, 3.522882323613822*^9}}],
+
+Cell[BoxData["55374"], "Output",
+ CellChangeTimes->{{3.522882288551049*^9, 3.522882341141306*^9}, 
+   3.522886132941061*^9}]
+}, Open  ]]
+},
+WindowSize->{640, 693},
+WindowMargins->{{Automatic, 147}, {20, Automatic}},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 459, 13, 58, "Input"],
+Cell[1029, 37, 124, 2, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
