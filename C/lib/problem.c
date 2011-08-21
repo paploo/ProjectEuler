@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <time.h>
+#include <assert.h>
 
 #include "problem.h"
 
@@ -13,6 +14,7 @@ void ProblemOutputUIntegerCheck(ProblemUInteger computedAnswer, ProblemUInteger 
 bool ProblemIntegerCheck(ProblemInteger answer, ProblemIntegerProcedure *fp) {
 	ProblemInteger computedAnswer = (*fp)();
 	ProblemOutputIntegerCheck(computedAnswer, answer);
+	assert(computedAnswer == answer);
 	return computedAnswer == answer;
 }
 

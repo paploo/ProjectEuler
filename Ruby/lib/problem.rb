@@ -18,6 +18,7 @@ class Problem
   def check(answer, &block)
     computed_answer = block.call
     output_check(computed_answer, answer)
+    raise RuntimeError, "Expected #{computed_anser.inspect} but got #{answer.inspect}" unless computed_answer==answer
     return computed_answer == answer
   end
   

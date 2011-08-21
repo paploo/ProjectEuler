@@ -4,7 +4,12 @@
 check(Answer, Fun) ->
 	ComputedAnswer = Fun(),
 	output_check(ComputedAnswer, Answer),
-	ComputedAnswer =:= Answer.
+	case ComputedAnswer =:= Answer of
+		false ->
+			throw(check_failed);
+		true ->
+			true
+	end.
 
 run(Fun) ->
 	Start = now(),
