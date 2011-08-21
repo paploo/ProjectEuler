@@ -11,7 +11,7 @@ end
 
 Problem.new do |p|
   p.check(26) { sum_digits(2**15) }
-
+  
   p.submitted_answer = 1366
   p.run { sum_digits(2**1000) }
 end

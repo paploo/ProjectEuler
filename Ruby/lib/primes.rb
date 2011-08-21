@@ -26,7 +26,7 @@ module Primes
     return n if fast_prime_test(n)==1
     
     # get the list of necessary primes and try to factor it.
-    primes = primes_to(Math.sqrt(n) + 1) # To be safe against rounding errors, we do (sqrt(n)+1).floor.  One extra test won't hurt.
+    primes = primes_to( (Math.sqrt(n) + 0.5).floor ) # To be safe against rounding errors, we do (sqrt(n)+1).floor.  One extra test won't hurt.
     first_p = primes.find {|p| n%p==0}
     return first_p.nil? ? n : first_p
   end
