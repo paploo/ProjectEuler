@@ -7,19 +7,12 @@
 #include "definitions.h"
 #include "problem.h"
 #include "array.h"
-#include "eratosthenes.h"
+#include "primes.h"
 
-Array *primes = NULL;
 
-// By making primes a global, the time reported for the run is incorrect,
-// but it makes it faster overall.
-UInteger nthPrime(UInteger n) {
-	UInteger m = 1<<17; //2^17
-	
-	if( !primes ) {
-		primes = arrayAlloc();
-		eratosthenesGetPrimes(m, primes);
-	}
+UInteger nthPrime(UInteger n) {	
+	Array *primes = arrayAlloc();
+	primesGetPrimes(n, primes);
 	
 	if(n >= primes->len)
 		return 0;
