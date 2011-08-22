@@ -10,8 +10,8 @@ Cons *cons_alloc();
 Cons *cons_init();
 void cons_delete(Cons *c);
 
-void *head(Cons *c);
-Cons *rest(Cons *c);
+void *cons_head(Cons *c);
+Cons *cons_rest(Cons *c);
 
 UInteger cons_length(Cons *c);
 void *cons_get(Cons *c, UInteger index);
