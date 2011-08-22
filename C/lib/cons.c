@@ -37,11 +37,11 @@ void cons_delete(Cons *c) {
 	free(c);
 }
 
-void *head(Cons *c) {
+void *cons_head(Cons *c) {
 	return c->value;
 }
 
-Cons *rest(Cons *c) {
+Cons *cons_rest(Cons *c) {
 	return c->next;
 }
 
