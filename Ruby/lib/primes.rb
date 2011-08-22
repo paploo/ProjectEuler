@@ -8,7 +8,7 @@ module Primes
   IS_COMPOSITE = -1
   IS_UNDETERMINED = 0
   
-  # Returns true if the prime is true.
+  # Returns true if it is a prime.
   def self.prime?(n)
     # To deal with 1 is a special case, and we grab anything negative while we're at it.
     return false if n<2
