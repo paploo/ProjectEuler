@@ -1,0 +1,126 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      3750,        116]
+NotebookOptionsPosition[      3213,         92]
+NotebookOutlinePosition[      3554,        107]
+CellTagsIndexPosition[      3511,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Comb", "[", 
+   RowBox[{"n", ",", "r"}], "]"}], "=", 
+  RowBox[{"Binomial", "[", 
+   RowBox[{"n", ",", "r"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5234017821635923`*^9, 3.523401832328677*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Binomial", "[", 
+  RowBox[{"n", ",", "r"}], "]"}]], "Output",
+ CellChangeTimes->{{3.523401828482298*^9, 3.523401832956826*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Length", "[", "\[IndentingNewLine]", 
+    RowBox[{"Select", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Binomial", "[", 
+         RowBox[{"n", ",", "r"}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"r", ",", "1", ",", "n"}], "}"}]}], "\[IndentingNewLine]", 
+       "]"}], "\[IndentingNewLine]", ",", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"#", ">", "1000000"}], ")"}], "&"}]}], "]"}], 
+    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "23", ",", "100"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5234018497689342`*^9, 3.523401877680169*^9}, {
+  3.5234019122483892`*^9, 3.5234021201843653`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "4", ",", "7", ",", "10", ",", "11", ",", "12", ",", "15", ",", "16", ",", 
+   "17", ",", "18", ",", "19", ",", "22", ",", "23", ",", "24", ",", "25", 
+   ",", "26", ",", "27", ",", "28", ",", "29", ",", "30", ",", "31", ",", 
+   "32", ",", "35", ",", "36", ",", "37", ",", "38", ",", "39", ",", "40", 
+   ",", "41", ",", "42", ",", "43", ",", "44", ",", "45", ",", "46", ",", 
+   "47", ",", "48", ",", "49", ",", "50", ",", "51", ",", "52", ",", "53", 
+   ",", "54", ",", "55", ",", "56", ",", "57", ",", "58", ",", "59", ",", 
+   "60", ",", "61", ",", "62", ",", "65", ",", "66", ",", "67", ",", "68", 
+   ",", "69", ",", "70", ",", "71", ",", "72", ",", "73", ",", "74", ",", 
+   "75", ",", "76", ",", "77", ",", "78", ",", "79", ",", "80", ",", "81", 
+   ",", "82", ",", "83", ",", "84", ",", "85", ",", "86", ",", "87", ",", 
+   "88", ",", "89", ",", "90", ",", "91", ",", "92", ",", "93"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.523402033940209*^9, 3.52340208055405*^9, {3.523402111039928*^9, 
+   3.523402120532552*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.52340212916607*^9, 3.523402134894908*^9}}],
+
+Cell[BoxData["4075"], "Output",
+ CellChangeTimes->{3.523402135312285*^9}]
+}, Open  ]]
+},
+WindowSize->{640, 680},
+WindowMargins->{{Automatic, 237}, {32, Automatic}},
+FrontEndVersion->"7.0 for Mac OS X x86 (32-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 231, 6, 27, "Input"],
+Cell[801, 30, 151, 3, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[989, 38, 894, 21, 178, "Input"],
+Cell[1886, 61, 1075, 18, 73, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2998, 84, 123, 2, 27, "Input"],
+Cell[3124, 88, 73, 1, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
